@@ -9,5 +9,9 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "types": ["node"]
-  }
+  },
+  "exclude": [
+    "src/plugins/**.ts",
+    "/plugins/**.ts",
+  ]
 }

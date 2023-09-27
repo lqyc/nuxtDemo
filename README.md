@@ -11,5 +11,5 @@ D ***    // 删除
 F ***    // 修复
 ```
 # Nuxt相关文档链接
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction)
+- [deployment documentation](https://nuxt.com/docs/getting-started/deployment)

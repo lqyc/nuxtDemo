@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxi dev --dotenv .env.development -p 3001",
+    "test": "nuxi dev --dotenv .env.test",
+    "build": "nuxi build --dotenv .env.production",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -14,14 +15,18 @@
     "@nuxt/typescript-build": "^3.0.1",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.2",
     "@typescript-eslint/parser": "^6.7.3",
+    "less": "^4.2.0",
     "nuxt": "^3.7.3",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@pinia/nuxt": "^0.4.11",
+    "autoprefixer": "^10.4.16",
     "install": "^0.13.0",
     "pinia": "^2.1.6",
+    "postcss-pxtorem": "^6.0.0",
     "vant": "^4.7.0"
   }
 }

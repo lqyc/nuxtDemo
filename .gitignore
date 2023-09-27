@@ -20,5 +20,8 @@ logs
 
 # Local env files
 .env
-.env.*
+.env.mock
 !.env.example
+
+.output
+.nuxt

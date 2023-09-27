@@ -1,13 +1,11 @@
 <template>
     <ul>
       <li>
-        <NuxtLink to="/demo">哈哈哈</NuxtLink>
-      </li>
-      <li>
         <NuxtLink to="/demo">去demo页面</NuxtLink>
       </li>
+      <li> 哈哈哈 {{ $title }}</li>
       <li>
-        <NuxtLink to="/demo">去demo页面1</NuxtLink>
+        <div @click="$linkTo({url: '/demo'})">公共方法跳转去demo页面00000000</div>
       </li>
     </ul>
   </template>

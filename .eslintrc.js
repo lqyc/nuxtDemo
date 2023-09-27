@@ -1,91 +1,110 @@
+/* eslint-env node */
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true
-  },
-  'extends': [
+  root: true,
+  extends: [
+    'plugin:vue/vue3-essential',
+    'eslint:recommended',
+    '@vue/eslint-config-typescript/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:nuxt/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:tailwindcss/recommended'
   ],
-  'overrides': [
-  ],
-  'parser': 'vue-eslint-parser',
-  'parserOptions': {
-    'ecmaVersion': 'latest',
-    'sourceType': 'module'
+  env: {
+    'vue/setup-compiler-macros': true,
+    'browser': true,
+    'amd': true,
+    'node': true
   },
-  'plugins': [
-    '@typescript-eslint'
-  ],
-  'rules': {
-    '@typescript-eslint/ban-ts-comment': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/interface-name-prefix': 'off',
+  plugins: ['tailwindcss'],
+  rules: {
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'vue/multi-word-component-names': 'off',
-    '@typescript-eslint/no-explicit-any': 2,
-    '@typescript-eslint/no-inferrable-types': 2,
-    'import/prefer-default-export': 'off',
-    'import/no-mutable-exports': 'off',
-    'no-alert': 2,
-    'quotes': [ 2, 'single' ],
-    'jsx-quotes': [ 2, 'prefer-double' ],
-    'no-cond-assign': 2,
-    'no-const-assign': 2,
-    'no-constant-condition': 2,
-    'no-delete-var': 2,
-    'no-dupe-keys': 2,
-    'no-dupe-args': 2,
-    'no-duplicate-case': 2,
-    'no-else-return': 2,
-    'no-eq-null': 2,
-    'no-extra-parens': 2,
-    'no-ex-assign': 2,
-    'no-extra-boolean-cast': 2,
-    'no-extra-semi': 2,
-    'no-implicit-coercion': 2,
-    'no-inline-comments': 2,
-    'no-func-assign': 2,
-    'no-irregular-whitespace': 2,
-    'no-loop-func': 1,
-    'no-multiple-empty-lines': [ 2, { 'max': 1 } ],
-    'no-nested-ternary': 0,
-    'no-new-func': 2,
-    'no-new-object': 2,
-    'no-new-require': 2,
-    'no-plusplus': 2,
-    'no-redeclare': 2,
-    'no-script-url': 0,
-    'no-throw-literal': 2,
-    'no-undef': 0,
-    'no-undef-init': 2,
-    'no-unused-vars': 0,
-    'no-useless-call': 2,
-    'no-void': 2,
-    'no-var': 2,
-    'array-bracket-spacing': [ 2, 'always' ],
-    'camelcase': 2,
-    'consistent-this': [ 2, 'that' ],
-    'default-case': 2,
-    'eqeqeq': 2,
-    'func-names': 0,
-    'indent': [ 2, 2 ],
-    'init-declarations': 0,
-    'key-spacing': [ 0, { 'beforeColon': false, 'afterColon': true } ],
-    'object-curly-spacing': [ 2, 'always' ],
-    'operator-linebreak': [ 2, 'after' ],
-    'id-match': 0,
-    'semi': [ 2, 'never' ],
-    'use-isnan': 2,
-    'valid-typeof': 2,
-    'no-class-assign': 2,
-    'space-in-parens': 2,
-    'keyword-spacing': 2,
-    'space-infix-ops': 2,
-    'arrow-parens': [ 'error', 'as-needed' ],
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn'
+    'no-var': 'error',
+    // 使用单引号
+    quotes: [2, 'single', 'avoid-escape'],
+    // 使用 === 替代 ==
+    eqeqeq: [2, 'allow-null'],
+    //强制使用分号结尾
+    semi: ['error', 'always'],
+    // 强制使用两个空格执行一致的缩进样式
+    indent: ['error', 2],
+    //禁止出现多个空格
+    'no-multi-spaces': 'error',
+    // 禁止多行字符串 
+    'no-multi-str': 'error',
+    //要求使用一致的 return 语句 
+    'consistent-return': 'error',
+    //在数组开括号后和闭括号前强制换行
+    'array-bracket-newline': [
+      'error', {
+        'minItems': 4,
+        multiline: true 
+      }
+    ],
+    // 大括号后必须换行
+    'brace-style': 'error',
+    // 强制使用骆驼拼写法命名约定
+    'camelcase': 'error',
+    // 不允许多个空行 
+    'no-multiple-empty-lines': 'error',
+    // 禁止或强制在代码块中开括号前和闭括号后有空格
+    'block-spacing': 'error',
+    // 强制在对象字面量的键和值之间使用一致的空格
+    'key-spacing': ['error', { 'mode': 'strict' }],
+    // 强制在函数括号内使用一致的换行, 函数参数超过2个换行
+    'function-paren-newline': ['error', { 'minItems': 3 }],
+    // 强制回调函数最大嵌套深度
+    'max-nested-callbacks': ['warn', 3],
+    // 强制关键字周围空格的一致性 关键字前后必须有空格
+    'keyword-spacing': [
+      'error', {
+        'before': true,
+        'after': true 
+      }
+    ],
+    // 强制分号之后有空格，禁止分号之前有空格。
+    'semi-spacing': 'error',
+    //强制在块之前使用一致的空格
+    'space-before-blocks': 'error',
+    //强制在花括号中使用一致的空格
+    'object-curly-spacing': ['error', 'always'],
+    // 强制在圆括号内使用一致的空格
+    'space-in-parens': 'error',
+    // 强制在一元操作符前后使用一致的空格
+    'space-unary-ops': 'error',
+    'arrow-spacing': 'error',
+    // 强制在逗号周围使用空格
+    'comma-spacing': [
+      'error', {
+        'before': false,
+        'after': true 
+      }
+    ],
+    // 'object-property-newline': 'error',
+    // 禁止多余的 return 语句
+    'no-useless-return': 'error',
+    // 强制可嵌套的块的最大深度4
+    'max-depth': 'warn',
+    // 要求方法链中每个调用都有一个换行符
+    'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 2 }],
+    'tailwindcss/no-custom-classname': ['off'],
+    // 禁止使用拖尾逗号 
+    'comma-dangle': ['error', 'never'],
+    'vue/max-attributes-per-line': [
+      'error', {
+        'singleline': { 'max': 3 },      
+        'multiline': { 'max': 3 } 
+      }
+    ],
+    'multiline-ternary': ['error', 'always'],
+    'object-curly-newline': ['error', { 'multiline': true }]
   }
-}
+};
