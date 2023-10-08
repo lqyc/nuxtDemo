@@ -4,7 +4,7 @@
       <ListItem></ListItem>
       <ClientOnly>
         <!-- 此组件仅在客户端显示 -->
-        <ListDetailListDemo/>
+        <DemoDetailListDemo/>
       </ClientOnly>
     </div>
   </template>

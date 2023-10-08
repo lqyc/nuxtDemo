@@ -12,3 +12,7 @@ __MOCK__
 MOCK
 src/assets/
 src/main
+build
+output
+.nuxt
+.husky

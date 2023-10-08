@@ -8,21 +8,32 @@
     "build": "nuxi build --dotenv .env.production",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "eslint": "eslint . --ext .vue,.js,.jsx,.ts,.tsx --cache",
+    "eslint:fix": "npm run eslint -- --fix"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/typescript-build": "^3.0.1",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.2",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.7.3",
+    "@vant/nuxt": "^1.0.3",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.17.0",
     "less": "^4.2.0",
     "nuxt": "^3.7.3",
     "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "typescript": "*"
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "@pinia/nuxt": "^0.4.11",
+    "@vueuse/core": "^10.4.1",
     "autoprefixer": "^10.4.16",
     "install": "^0.13.0",
     "pinia": "^2.1.6",

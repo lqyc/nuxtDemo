@@ -24,7 +24,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "icon",
-          href: "https://cn.vuejs.org/logo.svg",
+          href: "https://upload.jianshu.io/users/upload_avatars/5764383/6d4e318b-7271-4bdd-9609-1e05b4d82c93.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
         },
       ],
     },
@@ -93,7 +93,9 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
+    '@vant/nuxt'
   ],
+  vant: { /** Options */ },
   buildModules: [
     '@nuxt/typescript-build',
   ],
