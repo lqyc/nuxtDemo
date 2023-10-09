@@ -7,4 +7,4 @@
         <DemoDetailListDemo/>
       </ClientOnly>
     </div>
-  </template>
+</template>

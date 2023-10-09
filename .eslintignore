@@ -27,3 +27,4 @@ declaration.d.ts
 *nuxt.config.ts
 src/middleware/*.ts
 .eslintrc.cjs
+src/plugins/*.ts

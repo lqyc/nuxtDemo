@@ -6,4 +6,4 @@
         <h1>欢迎来到demo页面</h1>
       </ClientOnly>
     </div>
-  </template>
+</template>

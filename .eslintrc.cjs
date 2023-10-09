@@ -26,8 +26,9 @@ module.exports = {
         "ecmaVersion": "latest",
         "sourceType": "module",
         "parser": "@typescript-eslint/parser",
-        "project": './tsconfig.json',
+        "project": ['tsconfig.json'],
         "extraFileExtensions": ['.vue'],
+        "tsconfigRootDir": __dirname, 
     },
     "parser": "vue-eslint-parser",
     "plugins": [
@@ -43,6 +44,7 @@ module.exports = {
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/semi": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off",
         "no-unused-vars": ["warn"],
         "@typescript-eslint/no-var-requires": 0,
         "no-var": "error",

@@ -8,4 +8,4 @@
         <NuxtLink to="/demo-page/demo">测试嵌套目录组件444ff</NuxtLink>
       </li>
     </ul>
-  </template>
+</template>

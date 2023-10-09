@@ -4,4 +4,4 @@
       <NuxtLayout name="header"></NuxtLayout>
       <slot />
     </div>
-  </template>
+</template>

@@ -11,17 +11,17 @@
 import { useUserStore } from '@/stores/useUserStore';
 // import { useWindowSize } from '@vueuse/core';
 
-  const userInfo = useUserStore().userInfo
-  const tips = useFoo()
-  const curTime = useTime()
-  // const { width, height } = useWindowSize()
-  // const baseUrl = useRuntimeConfig().public.baseURL;
-  // console.log('环境变量baseUrl',baseUrl, useRuntimeConfig());
-  // console.log( '监听页面resize', width.value, height.value);
-  definePageMeta({
-    title: '测试一下demo页面',
-    middleware: ["auth"],
-  });
+const userInfo = useUserStore().userInfo
+const tips = useFoo()
+const curTime = useTime()
+// const { width, height } = useWindowSize()
+// const baseUrl = useRuntimeConfig().public.baseURL;
+// console.log('环境变量baseUrl',baseUrl, useRuntimeConfig());
+// console.log( '监听页面resize', width.value, height.value);
+definePageMeta({
+  title: '测试一下demo页面',
+  middleware: ['auth']
+});
 </script>
 <style scoped>
 .test {

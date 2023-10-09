@@ -13,5 +13,10 @@
   "exclude": [
     "src/plugins/**.ts",
     "/plugins/**.ts",
+  ],
+  "include": [
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.vue",
   ]
 }
