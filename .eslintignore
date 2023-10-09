@@ -28,3 +28,4 @@ declaration.d.ts
 src/middleware/*.ts
 .eslintrc.cjs
 src/plugins/*.ts
+.eslintcache

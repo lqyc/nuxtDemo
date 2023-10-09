@@ -16,3 +16,12 @@ build
 output
 .nuxt
 .husky
+.eslintcache
+.eslintrc.cjs
+declaration.d.ts
+package-lock.json
+README.md 
+tsconfig.json
+.prettierrc.cjs
+nuxt.config.ts
+package.json

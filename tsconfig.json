@@ -10,13 +10,6 @@
     "allowSyntheticDefaultImports": true,
     "types": ["node"]
   },
-  "exclude": [
-    "src/plugins/**.ts",
-    "/plugins/**.ts",
-  ],
-  "include": [
-    "src/**/*",
-    "src/**/*.ts",
-    "src/**/*.vue",
-  ]
+  "exclude": ["src/plugins/**.ts", "/plugins/**.ts"],
+  "include": ["src/**/*", "src/**/*.ts", "src/**/*.vue"]
 }

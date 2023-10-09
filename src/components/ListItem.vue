@@ -3,9 +3,9 @@
     <li>
       <NuxtLink to="/demo-page/demo">去demo页面</NuxtLink>
     </li>
-    <li> 哈哈哈 {{ $title }}</li>
+    <li>哈哈哈 {{ $title }}</li>
     <li>
-      <div @click="$linkTo({url: '/demo-page/demo'})">公共方法跳转去demo页面00000000</div>
+      <div @click="$linkTo({ url: '/demo-page/demo' })">公共方法跳转去demo页面00000000</div>
     </li>
   </ul>
 </template>

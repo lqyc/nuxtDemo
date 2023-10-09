@@ -1,11 +1,11 @@
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(nuxtApp => {
   nuxtApp.vueApp.directive('focus', {
-    mounted (el) {
-      el.focus()
+    mounted(el) {
+      el.focus();
     },
-    getSSRProps (binding, vnode) {
+    getSSRProps(binding, vnode) {
       // you can provide SSR-specific props here
-      return {}
-    }
-  })
-})
+      return {};
+    },
+  });
+});
