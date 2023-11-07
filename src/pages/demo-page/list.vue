@@ -8,3 +8,12 @@
     </ClientOnly>
   </div>
 </template>
+<script setup>
+// const route = useRoute();
+definePageMeta({
+  title: 'list标题',
+});
+// watch(route, (to) => {
+//   console.log('listwatch --', to.meta.title);
+// }, { immediate: true, deep: true })
+</script>

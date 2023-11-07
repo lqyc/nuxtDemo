@@ -1,8 +1,10 @@
 // 定义全局点击跳转功能插件
 export default defineNuxtPlugin(nuxtApp => {
+  const routeTitle = nuxtApp._route.meta && nuxtApp._route.meta.title;
+  // console.log('nuxtApp',routeTitle,  nuxtApp, nuxtApp._route.meta);
   return {
     provide: {
-      title: '全局测试当前页面标题',
+      title: routeTitle,
       linkTo(item) {
         if (item.type == 'webview') {
           window.open(item.url);

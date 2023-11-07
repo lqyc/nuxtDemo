@@ -4,9 +4,9 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   const token = useCookie('token');
   // const route = useRoute()
   // 未登录
-  if (!token.value) {
+  if (token.value) {
     showToast('请先登录');
     // return abortNavigation()
-    return navigateTo('/login?from=' + route.fullPath);
+    return navigateTo('/demo-page/list');
   }
 });

@@ -12,6 +12,9 @@ D ***    // 删除
 F ***    // 修复
 ```
 
+### Tips
+- 页面definePageMeta配置了title才会显示导航菜单
+
 # Nuxt相关文档链接
 
 - [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction)
