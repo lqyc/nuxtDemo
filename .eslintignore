@@ -20,7 +20,6 @@ src/assets/iconfont
 *.ttf
 *.css
 
-.nuxt
 .husky
 README.md
 declaration.d.ts

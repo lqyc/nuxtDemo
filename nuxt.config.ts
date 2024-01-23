@@ -73,6 +73,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  css: [
+    "@/assets/style/base.less"
+  ],
   postcss: {
     plugins: {
       // 这个工具可以实现自动添加CSS3前缀

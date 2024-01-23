@@ -7,7 +7,7 @@
     </ClientOnly>
   </div>
 </template>
-<script lang="ts" setup>
+<script setup>
 definePageMeta({
   title: 'Demo',
 });

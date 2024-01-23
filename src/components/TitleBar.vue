@@ -12,9 +12,6 @@
       <div class="title-left" :style="{ color: iconColor }">
         <i v-if="ifShowBack" class="iconfont icon_left" @click="backPath"></i>
         <i v-if="showClose" class="iconfont icon_close close-btn"></i>
-        <span class="left-slot" @click="backPath">
-          <slot name="left"></slot>
-        </span>
       </div>
       <!-- 头部中间 -->
       <div class="title-content overFlowTwo" :style="{ color: titleColor }">
@@ -63,10 +60,6 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  backType: {
-    type: String,
-    default: 'normal', // 本地仓库跳转：normal 其他webview返回： webBack
-  },
   title: {
     type: String,
     default: '标题',
@@ -97,12 +90,6 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  shareObj: {
-    type: Object,
-    default() {
-      return {};
-    },
-  },
   showClose: {
     // 显示x关闭
     type: Boolean,
@@ -122,6 +109,12 @@ const props = defineProps({
   },
 });
 console.log('props', props.title);
+const backPath = () => {
+  console.log('click left');
+};
+const handleRight = () => {
+  console.log('click right');
+};
 </script>
 
 <style lang="less">
