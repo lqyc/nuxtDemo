@@ -4,13 +4,13 @@ public
 dist
 .vscode
 node_modules
-src/utils/utils
+utils/utils
 config/index
 deploy
 @/utils/utils
 __MOCK__
 MOCK
-src/assets/iconfont
+assets/iconfont
 
 *.json
 *.html
@@ -24,7 +24,7 @@ src/assets/iconfont
 README.md
 declaration.d.ts
 *nuxt.config.ts
-src/middleware/*.ts
+middleware/*.ts
 .eslintrc.cjs
-src/plugins/*.ts
+plugins/*.ts
 .eslintcache

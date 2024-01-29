@@ -4,14 +4,14 @@ public
 dist
 .vscode
 node_modules
-src/utils/utils
+utils/utils
 config/index
 deploy
 @/utils/utils
 __MOCK__
 MOCK
-src/assets/
-src/main
+assets/
+main
 build
 output
 .nuxt

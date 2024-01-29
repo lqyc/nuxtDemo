@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-  srcDir: 'src/',
+  srcDir: '',
   devtools: { enabled: false },
   runtimeConfig: {
     apiKey: process.env.NUXT_APP_ENV,
@@ -94,7 +94,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ['@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@vant/nuxt'],
+  modules: ['@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@vant/nuxt','@nuxtjs/proxy'],
   vant: {
     /** Options */
   },
