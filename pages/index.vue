@@ -14,7 +14,6 @@ import { useUserStore } from '@/stores/useUserStore';
 import { useFoo, useTime } from '~/composables/useHooks';
 // import { useWindowSize } from '@vueuse/core';
 // import { $routes } from '@/router';
-import { getList } from '@/api/common';
 
 const userInfo = useUserStore().userInfo;
 const tips = useFoo();
@@ -25,13 +24,6 @@ const curTime = useTime();
 // console.log( '监听页面resize', width.value, height.value);
 // console.log('$routesmmm)', $routes)
 // console.log('环境变量', process);
-getList()
-  .then(r => {
-    console.log('rrr', r);
-  })
-  .catch(e => {
-    console.log('eee', e);
-  });
 definePageMeta({
   title: 'demo标题',
   middleware: ['auth'],

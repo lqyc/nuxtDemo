@@ -9,6 +9,16 @@ export default defineNuxtConfig({
       baseURL: process.env.NUXT_APP_API_ROOT,
     },
   },
+  nitro: {
+    devProxy: {
+      '/group': {
+        target: 'http://demonuxtapi.dishait.cn/',
+        changeOrigin: true,
+        // pathRewrite: {'^/api': ''},
+        autoRewrite: true
+      }
+    }
+  },
   app: {
     head: {
       titleTemplate: '%s - Nuxt3 | QYC',
@@ -94,11 +104,11 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ['@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@vant/nuxt','@nuxtjs/proxy'],
+  modules: ['@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@vant/nuxt'],
   vant: {
     /** Options */
   },
-  buildModules: ['@nuxt/typescript-build'],
+  buildModules: ['@nuxt/typescript-build','@nuxtjs/proxy'],
   autoImports: {
     dirs: ['apis'],
   },

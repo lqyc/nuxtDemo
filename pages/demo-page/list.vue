@@ -9,6 +9,12 @@
   </div>
 </template>
 <script setup>
+import { getList } from '@/api/common';
+const res = await getList().catch(e => {
+  console.log('eee', e);
+});
+console.log('getList--res', res);
+// console.log('环境变量', process);
 // const route = useRoute();
 definePageMeta({
   title: 'list标题',

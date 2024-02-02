@@ -1,10 +1,10 @@
 import request from '@/utils/request';
 
-const preApi = '/api';
+const preApi = '/group';
 //  获取详情接口
-export const getList = (params?: any) => {
-  return request.post({
-    url: `${preApi}/pub/productInfo/reportInfoList`,
+export const getList = async (params?: any) => {
+  return request.get({
+    url: `${preApi}/list?page=1&usable=1&limit=8`,
     params,
   });
 };
