@@ -2,37 +2,40 @@
   <div
     :class="['title-wrap']"
     :style="{
-      backgroundColor: titleBackground,
       ...customStyle,
-      zIndex: zIndex,
+      zIndex: titleConfig.zIndex,
     }"
   >
     <div v-if="showTitle" class="title-body">
       <!-- 头部左侧 -->
-      <div class="title-left" :style="{ color: iconColor }">
-        <i v-if="ifShowBack" class="iconfont icon-zuofanhui icon_left" @click="backPath"></i>
-        <i v-if="showClose" class="iconfont icon-guanbi close-btn"></i>
+      <div class="title-left" :style="{ color: titleConfig.iconColor }">
+        <i
+          v-if="!titleConfig.hideBack"
+          class="iconfont icon-zuofanhui icon_left"
+          @click="handleLeft"
+        ></i>
+        <i v-if="titleConfig.showClose" class="iconfont icon-guanbi close-btn"></i>
       </div>
       <!-- 头部中间 -->
-      <div class="title-content overFlowTwo" :style="{ color: titleColor }">
+      <div class="title-content overFlowTwo" :style="{ color: titleConfig.titleColor }">
         {{ title }} <slot name="titleExtend"></slot>
       </div>
       <!-- 头部右侧 -->
       <div class="title-right">
         <!-- 分享的title -->
-        <span class="text-icon" v-if="type === 'share'" @click="handleRight">
+        <span class="text-icon" v-if="titleConfig.type === 'share'" @click="handleRight">
           <i class="iconfont icon-fenxiang"></i>
         </span>
         <!-- 带搜索的title -->
-        <span class="text-icon" v-else-if="type === 'search'" @click="handleRight">
+        <span class="text-icon" v-else-if="titleConfig.type === 'search'" @click="handleRight">
           <i class="iconfont icon-a-sousuo3x"></i>
         </span>
         <!-- 右边为文字 -->
-        <span class="text-icon" v-else-if="type === 'text'" @click="handleRight">
-          {{ rightText }}
+        <span class="text-icon" v-else-if="titleConfig.type === 'text'" @click="handleRight">
+          {{ titleConfig.rightText }}
         </span>
         <!-- 右边为客服 -->
-        <span class="text-icon" v-else-if="type === 'service'" @click="handleRight">
+        <span class="text-icon" v-else-if="titleConfig.type === 'service'" @click="handleRight">
           <i class="iconfont icon-kehu"></i>
         </span>
         <!-- 右边为插槽自定义内容 -->
@@ -45,60 +48,23 @@
 </template>
 <script setup lang="ts">
 defineProps({
-  showTitle: {
-    // 是否显示默认标题title
-    type: Boolean,
-    default: true,
-  },
-  ifShowBack: {
-    // 控制左侧返回按钮显隐，默认是展示
-    type: Boolean,
-    default: true,
-  },
-  type: {
-    // 控制右侧按钮类型: share分享 search搜索 text文字 service客服
-    type: String,
-    default: '',
+  titleConfig: {
+    type: Object,
+    default() {
+      return {
+        zIndex: '2100', // 标题栏层级
+        hideBack: false, // 控制左侧返回按钮显隐，默认是展示false
+        type: '', // 控制右侧按钮类型: share分享 search搜索 text文字 service客服
+        rightText: '', // 右侧展示文字(当参数type的值为text时，需传)
+        showClose: false, // 显示x关闭
+        iconColor: '',
+        titleColor: '#000000',
+      };
+    },
   },
   title: {
     type: String,
     default: '标题',
-  },
-  titleBackground: {
-    type: String,
-    default: '#ffffff',
-  },
-  iconColor: {
-    type: String,
-    default: '',
-  },
-  titleColor: {
-    type: String,
-    default: '#000000',
-  },
-  path: {
-    type: String,
-    default: '',
-  },
-  //  点击返回按钮,跳转到上(步数)页
-  backStep: {
-    type: Number,
-    default: -1,
-  },
-  //  右侧展示文字(当参数type的值为text时，需传)
-  rightText: {
-    type: String,
-    default: '',
-  },
-  showClose: {
-    // 显示x关闭
-    type: Boolean,
-    default: false,
-  },
-  zIndex: {
-    // 标题层级
-    type: Number,
-    default: 2100,
   },
   customStyle: {
     // 标题样式自定义style
@@ -107,11 +73,16 @@ defineProps({
       return {};
     },
   },
+  showTitle: {
+    // 是否显示默认标题栏
+    type: Boolean,
+    default: true,
+  },
 });
-const router = useRouter()
-const backPath = () => {
+const router = useRouter();
+const handleLeft = () => {
   console.log('click left');
-  router.go(-1)
+  router.go(-1);
 };
 const handleRight = () => {
   console.log('click right');

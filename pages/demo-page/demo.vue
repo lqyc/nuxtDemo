@@ -11,7 +11,6 @@
 definePageMeta({
   title: 'Demo-',
   titleConfig: {
-    type: 'share',
     hideTitle: true,
   },
 });

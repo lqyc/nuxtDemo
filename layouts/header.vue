@@ -1,10 +1,6 @@
 <template>
   <header class="header">
-    <TitleBar
-      :title="pageTitle"
-      :type="titleConfig.type || ''"
-    >
-    </TitleBar>
+    <TitleBar :title="pageTitle" :titleConfig="titleConfig"> </TitleBar>
   </header>
 </template>
 <script setup>

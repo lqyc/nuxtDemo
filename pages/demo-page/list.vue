@@ -19,7 +19,7 @@ console.log('getList--res', res);
 definePageMeta({
   title: 'list标题',
   titleConfig: {
-    type: 'share'
+    type: 'share',
   },
 });
 // watch(route, (to) => {
