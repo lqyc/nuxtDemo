@@ -1,14 +1,16 @@
 <template>
-  <div :class="[`${$title ? 'nav-padding' : ''}`]">
-    <h3>默认模板添加在所有页面，也可单独添加</h3>
-    <NuxtLayout name="header" v-if="$title"></NuxtLayout>
+  <div :class="[`${!titleConfig.hideTitle ? 'nav-padding' : ''}`]">
+    <NuxtLayout name="header" v-if="!titleConfig.hideTitle"></NuxtLayout>
     <slot />
   </div>
 </template>
 <script setup>
-// const route = useRoute();
-// const pageTitle = ref(route.meta.title);
-// console.log('ropageTitleute', pageTitle);
+const route = useRoute();
+// 通过计算属性实时获取变化的路由元数据
+const titleConfig = computed(() => {
+  return route.meta.titleConfig || {};
+});
+console.log('titleConfig----', titleConfig);
 </script>
 <style lang="less" scoped>
 .nav-padding {

@@ -1,6 +1,18 @@
 <template>
   <header class="header">
-    <TitleBar :title="$title"></TitleBar>
+    <TitleBar
+      :title="pageTitle"
+      :type="titleConfig.type || ''"
+    >
+    </TitleBar>
   </header>
 </template>
-<script setup></script>
+<script setup>
+const route = useRoute();
+const pageTitle = computed(() => {
+  return route.meta.title || '';
+});
+const titleConfig = computed(() => {
+  return route.meta.titleConfig || {};
+});
+</script>

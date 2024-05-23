@@ -36,7 +36,14 @@ export default defineNuxtConfig({
           rel: 'icon',
           href: 'https://upload.jianshu.io/users/upload_avatars/5764383/6d4e318b-7271-4bdd-9609-1e05b4d82c93.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
         },
+        {
+          rel: 'stylesheet',
+          href: '/iconfont/iconfont.css'
+        }
       ],
+      script: [
+        {src: '/iconfont/iconfont.js'}
+      ]
     },
   },
   build: {
@@ -78,7 +85,7 @@ export default defineNuxtConfig({
         // 生产环境移除console
         compress: {
           drop_console: process.env.NUXT_APP_ENV == 'production' ? true : false,
-          drop_debugger: process.env.NUXT_APP_ENV == 'production' ? true : false,
+          drop_debugger: process.env.NUXT_APP_ENV == 'production',
         },
       },
     },

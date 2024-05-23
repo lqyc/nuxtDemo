@@ -9,6 +9,10 @@
 </template>
 <script setup>
 definePageMeta({
-  title: 'Demo',
+  title: 'Demo-',
+  titleConfig: {
+    type: 'share',
+    hideTitle: true,
+  },
 });
 </script>

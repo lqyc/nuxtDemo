@@ -18,6 +18,9 @@ console.log('getList--res', res);
 // const route = useRoute();
 definePageMeta({
   title: 'list标题',
+  titleConfig: {
+    type: 'share'
+  },
 });
 // watch(route, (to) => {
 //   console.log('listwatch --', to.meta.title);

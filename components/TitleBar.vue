@@ -10,8 +10,8 @@
     <div v-if="showTitle" class="title-body">
       <!-- 头部左侧 -->
       <div class="title-left" :style="{ color: iconColor }">
-        <i v-if="ifShowBack" class="iconfont icon_left" @click="backPath"></i>
-        <i v-if="showClose" class="iconfont icon_close close-btn"></i>
+        <i v-if="ifShowBack" class="iconfont icon-zuofanhui icon_left" @click="backPath"></i>
+        <i v-if="showClose" class="iconfont icon-guanbi close-btn"></i>
       </div>
       <!-- 头部中间 -->
       <div class="title-content overFlowTwo" :style="{ color: titleColor }">
@@ -21,11 +21,11 @@
       <div class="title-right">
         <!-- 分享的title -->
         <span class="text-icon" v-if="type === 'share'" @click="handleRight">
-          <i class="iconfont icon_share"></i>
+          <i class="iconfont icon-fenxiang"></i>
         </span>
         <!-- 带搜索的title -->
         <span class="text-icon" v-else-if="type === 'search'" @click="handleRight">
-          <i class="iconfont icon_search"></i>
+          <i class="iconfont icon-a-sousuo3x"></i>
         </span>
         <!-- 右边为文字 -->
         <span class="text-icon" v-else-if="type === 'text'" @click="handleRight">
@@ -33,7 +33,7 @@
         </span>
         <!-- 右边为客服 -->
         <span class="text-icon" v-else-if="type === 'service'" @click="handleRight">
-          <i class="iconfont icon_robot"></i>
+          <i class="iconfont icon-kehu"></i>
         </span>
         <!-- 右边为插槽自定义内容 -->
         <span class="text-icon" v-else @click="handleRight">
@@ -44,7 +44,7 @@
   </div>
 </template>
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   showTitle: {
     // 是否显示默认标题title
     type: Boolean,
@@ -93,7 +93,7 @@ const props = defineProps({
   showClose: {
     // 显示x关闭
     type: Boolean,
-    default: true,
+    default: false,
   },
   zIndex: {
     // 标题层级
@@ -108,9 +108,10 @@ const props = defineProps({
     },
   },
 });
-console.log('props', props.title);
+const router = useRouter()
 const backPath = () => {
   console.log('click left');
+  router.go(-1)
 };
 const handleRight = () => {
   console.log('click right');
@@ -131,7 +132,6 @@ const handleRight = () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 16px 0 10px;
   width: 100%;
   .iconfont {
     font-size: 22px;
@@ -143,9 +143,7 @@ const handleRight = () => {
     .close-btn,
     .icon_left {
       display: inline-block;
-      height: 45px;
       width: 35px;
-      line-height: 45px;
       text-indent: 10px;
     }
     .close-btn {
@@ -167,12 +165,12 @@ const handleRight = () => {
       display: flex;
       justify-content: flex-end;
       min-width: 46px;
-      padding-right: 12px;
+      padding-right: 30px;
     }
-    .icon_share {
-      font-size: 20px;
+    .icon-fenxiang {
+      font-size: 15px;
     }
-    .icon_search {
+    .icon-a-sousuo3x {
       color: rgb(146 145 146);
     }
   }
