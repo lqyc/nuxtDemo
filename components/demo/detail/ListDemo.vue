@@ -5,7 +5,7 @@
       <NuxtLink to="/demo-page/demo">测试嵌套目录组件333</NuxtLink>
     </li>
     <li>
-      <NuxtLink to="/demo-page/demo">测试嵌套目录组件444ff</NuxtLink>
+      <NuxtLink to="/">跳转首页</NuxtLink>
     </li>
   </ul>
 </template>

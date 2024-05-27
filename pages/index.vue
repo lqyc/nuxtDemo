@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h3>{{ userInfo.userName }}:{{ tips }}！</h3>
-    <NuxtLink to="/demo-page/list">进入列表页{{ $title }}!</NuxtLink>
+    <h3>{{ $title }}{{ userInfo.userName }}:{{ tips }}！</h3>
+    <div><NuxtLink to="/demo-page/list">动态路由列表</NuxtLink></div>
+    <div><NuxtLink to="/demo-page/list4?id=88">动态路由带参 </NuxtLink></div>
+    <div><NuxtLink to="/demo-page/dd?id=88">动态路由列表命名 </NuxtLink></div>
     <img src="~/assets/images/loading.gif" alt="loading" />
     <van-button type="primary">vant组件不需import引入</van-button>
     <img src="/img/loading.gif" />
@@ -37,5 +39,10 @@ definePageMeta({
 .test {
   font-size: 35px;
   height: 45px;
+}
+a {
+  line-height: 30px;
+  text-decoration: underline;
+  color: rgb(45, 106, 237);
 }
 </style>

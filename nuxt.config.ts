@@ -117,6 +117,6 @@ export default defineNuxtConfig({
   },
   buildModules: ['@nuxt/typescript-build','@nuxtjs/proxy'],
   autoImports: {
-    dirs: ['apis'],
+    dirs: ['api'],
   },
 });
